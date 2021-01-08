@@ -1,10 +1,6 @@
-from time import sleep
-import random
-from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
-from pynput.keyboard import Key, Controller
+from selenium.webdriver.common.keys import Keys
 
 def reverse(move):
     if move[-1] == "'":
@@ -40,8 +36,6 @@ def move_to_key(move):
         "D'": "L"
     }
     return d[move]
-
-keyboard = Controller()
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.implicitly_wait(10)
